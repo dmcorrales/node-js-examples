@@ -4,12 +4,13 @@ class UserBusiness {
         
     }
 
-    create(data){
-            User.create(data, (err, db) => {
+    create(entity, res, result){
+            User.create(entity, (err, db) => {
                 if(err)
                     console.log(err);
                     else
-                    console.log(db);
+                    res.json
+                    
             }
         );
     }

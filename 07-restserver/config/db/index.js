@@ -12,7 +12,7 @@ class DatabaseConfiguration {
     } 
 
     connectMongoose() {
-        mongoose.connect("mongodb://localhost:27017/mongoose" , {useNewUrlParser: true} , (err) => {
+        mongoose.connect("mongodb://144.91.104.30:27017/rhi-db" , {useNewUrlParser: true} , (err) => {
                 if(err){
                     console.error(err);
                 }
