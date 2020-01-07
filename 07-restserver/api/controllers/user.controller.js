@@ -8,12 +8,13 @@ class UserController {
     }
 
     async create(req, res){
-        console.log("pass1", UserDto);
-        console.log("pass2", req.body);
         let entity = mapper(UserDto, req.body);
         let result = await this._userService.create(entity);
-        console.log(result)
         return result;
+    }
+
+    async update(req, res){
+        return await this._userService.update(req.params.id, req.body);
     }
 }
 

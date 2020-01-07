@@ -1,3 +1,4 @@
 module.exports = {
-    UserOutput : require("./UserOutput")
+    UserOutput : require("./UserOutput"),
+    ErrorOutput: require("./ErrorOutput")
 }
