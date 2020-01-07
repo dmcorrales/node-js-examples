@@ -22,6 +22,10 @@ class UserService {
         return result;
     }
 
+    async findAll(numberPage){
+        return await this._userBusiness.findAll(numberPage);
+    }
+
 }
 
 module.exports = UserService;

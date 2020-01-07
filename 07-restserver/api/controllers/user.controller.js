@@ -14,7 +14,12 @@ class UserController {
     }
 
     async update(req, res){
-        return await this._userService.update(req.params.id, req.body);
+        let entity = mapper(UserDto, req.body);
+        return await this._userService.update(req.params.id, entity);
+    }
+
+    async findAll(req, res){
+        return await this._userService.findAll(req.params.page);
     }
 }
 

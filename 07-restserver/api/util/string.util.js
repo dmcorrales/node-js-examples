@@ -7,6 +7,8 @@
  */
 class StringUtil{
 
+    constructor(){}
+
     isEmpty(text){
         if(text === undefined || text === null)
             return true;

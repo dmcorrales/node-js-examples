@@ -26,8 +26,27 @@ class UserBusiness {
     }
 
     async update(id, entity){
-        console.log(entity)
-        return await User.findOneAndUpdate(id, entity);
+
+        if(this._stringUtil.isEmpty(entity.name))
+            throw new Error("El nombre no puede estar vacío");
+
+        if(this._stringUtil.isEmpty(entity.password))
+            throw new Error("La contraseña no puede estar vacía");
+            
+        if(this._stringUtil.isEmpty(entity.email))
+            throw new Error("El correo electrónico no puede estar vacío");
+
+        return await User.findOneAndUpdate(id, entity, { new:true, runValidators: true });
+    }
+
+    async findAll(numberPage = 1){
+        let limit = 5;
+        let skip = numberPage == 1 ? 1 : limit*numberPage;
+
+        return await User.find({  })
+        .skip(skip)
+        .limit(limit)
+        .exec();
     }
 }
 
