@@ -39,9 +39,10 @@ class UserBusiness {
         return await User.findOneAndUpdate(id, entity, { new:true, runValidators: true });
     }
 
-    async findAll(numberPage = 1){
+    async findAll(numberPage){
+        numberPage--;
         let limit = 5;
-        let skip = numberPage == 1 ? 1 : limit*numberPage;
+        let skip = limit*numberPage;
 
         return await User.find({  })
         .skip(skip)
