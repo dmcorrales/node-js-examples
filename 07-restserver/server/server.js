@@ -1,13 +1,10 @@
 require('./config');
-
 const DatabaseConfiguration = require('../config/db/index');
 const express = require('express');
-const color = require('colors');
 const app = express();
 const bodyParser = require('body-parser');
 const routes = require('../api/routes/index');
 
-console.log(routes)
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use('/api',routes);

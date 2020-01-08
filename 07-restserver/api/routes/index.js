@@ -1,9 +1,11 @@
 const {Router} = require('express');
 const UserRoutes = require('./user.routes');
+const LoginRoutes = require('./login.routes');
 const bodyParser = require('body-parser');
 const compression = require("compression");
 const cors = require('cors');
 const express = require("express");
 const router = express.Router();
 router.use('/user', UserRoutes);
+router.use('/login', LoginRoutes);
 module.exports = router;

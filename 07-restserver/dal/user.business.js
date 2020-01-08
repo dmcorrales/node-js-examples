@@ -57,6 +57,11 @@ class UserBusiness {
         }
     }
 
+    async findByEmail(email){
+        let findUser = await User.findOne({email:email}).exec();
+        return findUser;
+    }
+
     async count(){
         return await User.count();
     }

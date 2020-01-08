@@ -15,6 +15,14 @@ class PasswordCryptUtil {
         return bcrypt.hashSync(value, saltRounds);
     }
 
+    decrypt(value, encrypted){
+
+        if(this._stringUtil.isEmpty(value))
+            throw new Error("El valor a comparar la contraseña es vacío");
+
+        return bcrypt.compareSync(value, encrypted);
+    }
+
 }
 
 module.exports = PasswordCryptUtil;
