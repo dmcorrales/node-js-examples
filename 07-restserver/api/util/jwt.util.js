@@ -5,7 +5,11 @@ class JwtHelper{
     createToken(__id){
         return jwt.sign({
           id: __id,
-        }, 'secret-jwt-pixelway', { expiresIn: '1h' });
+        }, process.env.SEED, { expiresIn: '1h' });
+    }
+
+    validate(token, SEED){
+      return jwt.verify(token, SEED);
     }
 }
 

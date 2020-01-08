@@ -1,9 +1,10 @@
 const UserController = require("../controllers/user.controller");
+const {AuthMiddleware }= require("../middlewares")
 const express = require("express");
 const router = express.Router();
 const controller = new UserController();
-
-router.post("/", (req, res) => {
+const middleware = new AuthMiddleware();
+router.post("/" , (req, res) => {
     controller.create(req,res);
 });
 
