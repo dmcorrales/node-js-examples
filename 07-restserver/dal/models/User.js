@@ -21,10 +21,12 @@ let userSchema = new Schema({
     },
     role: {
         type: String,
-        enum: listRoles
+        enum: listRoles,
+        default: 'USER_ROLE'
     },
     estado: {
-        type: Boolean
+        type: Boolean,
+        default: true
     },
     google: {
         type: Boolean,

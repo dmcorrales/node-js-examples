@@ -26,6 +26,10 @@ class UserService {
         return await this._userBusiness.findAll(numberPage);
     }
 
+    async delete(id){
+        return await this._userBusiness.delete(id);
+    }
+
 }
 
 module.exports = UserService;

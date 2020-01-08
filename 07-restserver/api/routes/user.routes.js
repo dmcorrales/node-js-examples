@@ -2,33 +2,21 @@ const UserController = require("../controllers/user.controller");
 const express = require("express");
 const router = express.Router();
 const controller = new UserController();
-const { ErrorOutput } = require("../domains");
 
 router.post("/", (req, res) => {
-        controller.create(req,res).then(response => {
-            res.json(response);
-        }).catch(e => {
-            res.status(400);
-            res.json(new ErrorOutput(e.message));
-        });
+    controller.create(req,res);
 });
 
 router.put("/:id", (req,res) => {
-    controller.update(req,res).then(response => {
-        res.json(response);
-    }).catch(e => {
-        res.status(400);
-        res.json(new ErrorOutput(e.message));
-    });
+    controller.update(req,res);
 });
 
 router.get("/page/:page", (req,res) => {
-    controller.findAll(req,res).then(response => {
-        res.json(response);
-    }).catch(e => {
-        res.status(400);
-        res.json(new ErrorOutput(e.message));
-    });
+    controller.findAll(req,res);
+});
+
+router.delete("/:id", (req,res) => {
+    controller.delete(req,res);
 });
 
 module.exports = router;

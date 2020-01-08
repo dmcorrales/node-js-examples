@@ -44,10 +44,25 @@ class UserBusiness {
         let limit = 5;
         let skip = limit*numberPage;
 
-        return await User.find({  })
+        let findUsers = await User.find({  })
         .skip(skip)
         .limit(limit)
         .exec();
+
+        let countTotal = await this.count();
+
+        return {
+            users:findUsers,
+            count: countTotal
+        }
+    }
+
+    async count(){
+        return await User.count();
+    }
+
+    async delete(id){
+        return await User.findByIdAndUpdate(id,{estado:false});
     }
 }
 
