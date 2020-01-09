@@ -23,7 +23,6 @@ class PermissionBusiness {
     }
 
     async update(id, entity){
-
         return await Permission.findOneAndUpdate(id, entity, { new:true, runValidators: true });
     }
 
