@@ -21,10 +21,8 @@ let userSchema = new Schema({
     },
     role: {
         type: String,
-        enum: listRoles,
-        default: 'USER_ROLE'
     },
-    estado: {
+    status: {
         type: Boolean,
         default: true
     },

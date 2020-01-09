@@ -67,7 +67,7 @@ class UserBusiness {
     }
 
     async delete(id){
-        return await User.findByIdAndUpdate(id,{estado:false});
+        return await User.findByIdAndUpdate(id,{status:false});
     }
 }
 

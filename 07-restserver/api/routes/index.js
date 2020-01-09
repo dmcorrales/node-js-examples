@@ -1,11 +1,16 @@
 const {Router} = require('express');
 const UserRoutes = require('./user.routes');
 const LoginRoutes = require('./login.routes');
+const PermissionRoutes = require('./permission.routes');
+const RoleRoutes = require('./role.routes');
 const bodyParser = require('body-parser');
 const compression = require("compression");
 const cors = require('cors');
 const express = require("express");
 const router = express.Router();
+router.use(compression());
 router.use('/user', UserRoutes);
 router.use('/login', LoginRoutes);
+router.use('/permission', PermissionRoutes);
+router.use('/role', RoleRoutes);
 module.exports = router;
