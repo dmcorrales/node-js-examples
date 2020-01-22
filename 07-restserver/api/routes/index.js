@@ -11,6 +11,7 @@ const cors = require('cors');
 const express = require("express");
 const router = express.Router();
 router.use(compression());
+router.use(cors());
 router.use('/user', UserRoutes);
 router.use('/login', LoginRoutes);
 router.use('/permission', PermissionRoutes);
