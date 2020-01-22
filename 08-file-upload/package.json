@@ -1,0 +1,17 @@
+{
+  "name": "08-file-upload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server/index.js",
+  "scripts": {
+    "start": "nodemon src/server/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "nodemon": "^2.0.2"
+  }
+}
