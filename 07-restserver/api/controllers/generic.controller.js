@@ -11,6 +11,7 @@ class GenericController {
         this._service.create(entity).then(response => {
             res.json(response);
         }).catch(err => {
+            console.log(err)
             res.status(400);
             res.json(err.message);
         });
@@ -38,6 +39,15 @@ class GenericController {
 
     delete(req, res){
         this._service.delete(req.params.id).then(response => {
+            res.json(response);
+        }).catch(err => {
+            res.status(400);
+            res.json(err.message);
+        });
+    }
+
+    findOne(req, res){
+        this._service.findOne(req.params.id).then(response => {
             res.json(response);
         }).catch(err => {
             res.status(400);

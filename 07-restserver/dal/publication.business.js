@@ -27,6 +27,12 @@ class PublicationBusiness {
     async delete(id){
         return await Publication.findByIdAndUpdate(id,{status:false});
     }
+    
+    async findOne(id){
+        let publication = await Publication.find({id})
+        .exec;
+        return publication;
+    }
 
     async findAll(page){
         page--;

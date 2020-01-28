@@ -17,6 +17,11 @@ router.get("/page/:page", (req,res) => {
     controller.findAll(req,res);
 });
 
+router.get("/:id", (req,res) => {
+    controller.findOne(req,res);
+});
+
+
 router.delete("/:id", (req,res) => {
     controller.delete(req,res);
 });

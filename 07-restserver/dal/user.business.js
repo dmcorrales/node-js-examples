@@ -62,6 +62,12 @@ class UserBusiness {
         return findUser;
     }
 
+    async findOne(id){
+        console.log(id)
+        let findUser = await User.findById({_id:id}).exec();
+        return findUser;
+    }
+
     async count(){
         return await User.count();
     }

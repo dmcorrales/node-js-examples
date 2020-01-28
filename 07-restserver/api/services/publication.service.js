@@ -1,4 +1,4 @@
-const { CategoryBusiness } = require("../../dal");
+const { PublicationBusiness } = require("../../dal");
 
 /**
  * User Service
@@ -9,25 +9,29 @@ const { CategoryBusiness } = require("../../dal");
 class CategoryService {
 
     constructor(){
-        this._categoryBusiness = new CategoryBusiness();
+        this._publicationBusiness = new PublicationBusiness();
     }
 
     async create(entity){
-        let result = await this._categoryBusiness.create(entity);
+        let result = await this._publicationBusiness.create(entity);
         return result;
     }
 
     async update(id,entity){
-        let result = await this._categoryBusiness.update(id,entity);
+        let result = await this._publicationBusiness.update(id,entity);
         return result;
     }
 
     async findAll(numberPage){
-        return await this._categoryBusiness.findAll(numberPage);
+        return await this._publicationBusiness.findAll(numberPage);
     }
 
     async delete(id){
-        return await this._categoryBusiness.delete(id);
+        return await this._publicationBusiness.delete(id);
+    }
+
+    async findOne(id){
+        return await this._publicationBusiness.findOne(id);
     }
 
 }

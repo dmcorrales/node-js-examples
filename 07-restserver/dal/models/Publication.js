@@ -4,7 +4,7 @@ let Schema = mongoose.Schema;
 
 let publicationSchema = new Schema({
     category: {
-        type: String,
+        type: Object,
         required: [true, "Cannot be empty"]
     },
     author: {

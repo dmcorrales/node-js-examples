@@ -7,6 +7,10 @@ const routes = require('../api/routes/index');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+       next();
+ });
 app.use('/api',routes);
 var _db = new DatabaseConfiguration();
 

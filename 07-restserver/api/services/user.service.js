@@ -30,6 +30,10 @@ class UserService {
         return await this._userBusiness.delete(id);
     }
 
+    async findOne(id){
+        return await this._userBusiness.findOne(id);
+    }
+
 }
 
 module.exports = UserService;
