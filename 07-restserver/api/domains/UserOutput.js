@@ -5,6 +5,7 @@ class UserOuput{
         this.email;
         this.role;
         this.google;
+        this.id;
     }
 }
 module.exports = UserOuput;

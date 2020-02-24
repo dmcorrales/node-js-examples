@@ -4,5 +4,6 @@ module.exports = {
     PermissionController : require('./permission.controller'),
     RoleController : require('./role.controller'),
     PublicationController : require('./publication.controller'),
-    CategoryController : require('./category.controller')
+    CategoryController : require('./category.controller'),
+    ImageController : require('./image.controller')
 }
