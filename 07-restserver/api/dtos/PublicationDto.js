@@ -9,6 +9,7 @@ class PublicationDto{
         this.path_article = "";
         this.creation_date = "";
         this.edition_date = "";
+        this.image = "";
     }
 }
 

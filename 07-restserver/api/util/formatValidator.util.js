@@ -19,7 +19,6 @@ class FormatValidatorUtil {
 
     createOrValidateFolderByDate(){
         let date = new Date();
-        console.log(date.getUTCDay())
 
         let month = new Date().getMonth();
         let day = new Date().getDay();

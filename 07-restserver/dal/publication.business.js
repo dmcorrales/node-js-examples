@@ -13,6 +13,7 @@ class PublicationBusiness {
     async create(entity){
         var publication = new Publication(entity);
         publication.creation_date = new Date();
+
         return await publication.save();
     }
 

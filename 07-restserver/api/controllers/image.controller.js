@@ -1,30 +1,33 @@
 const {FormatValidatorUtil} = require('../util');
 
 class ImageController {
+    
     constructor(){
         this._formatValidatorUtil = new FormatValidatorUtil();
     }    
 
-    async upload(req, res){
+    upload(req, res){
 
         if(!req.files)
-            return res.status(400).json("No files found to upload");
+            res.status(400).json("No files found to upload");
         
-         let fileUpload = req.files.fileUpload;
+         let fileUpload = req.files.image;
          let arrayFile = fileUpload.name.split('.');
-         let isValidExtension =this._formatValidatorUtil.validate(arrayFile[1]);
+         let isValidExtension = this._formatValidatorUtil.validate(arrayFile[1]);
          
          if(!isValidExtension)
-             return res.status(500).json("Extensión no permitida");
+             res.status(500).json("Extensión no permitida");
          
-         let folder = this._formatValidatorUtil.createOrValidateFolderByDate();
-         console.log(folder)
-         fileUpload.mv(`${folder}/${new Date().getTime()}.${arrayFile[1]}`, (err) => {
+         let folder = `${process.env.IMAGE_PATH}`;
+         
+         let fileName = `${new Date().getTime()}.${arrayFile[1]}`;
+         console.log(`${folder}/${fileName}`)
+         fileUpload.mv(`${folder}/${fileName}`, (err) => {
              if(err)
-                 return res.status(500).json("Error al subir archivo");
+                 res.status(500).json("Error al subir archivo");
          });
- 
-         return res.status(200)
+         res.status(200).json("Archivo procesado");
+         return fileName;
      }
 
 

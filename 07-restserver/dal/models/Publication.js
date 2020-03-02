@@ -37,6 +37,9 @@ let publicationSchema = new Schema({
     edition_date: {
         type: Date
     },
+    image: {
+        type: String
+    },
     status: {
         type: Boolean,
         default: true
