@@ -30,8 +30,8 @@ class PublicationBusiness {
     }
     
     async findOne(id){
-        let publication = await Publication.find({id})
-        .exec;
+        let publication = await Publication.findById(id);
+
         return publication;
     }
 
