@@ -9,8 +9,9 @@ const routes = require('../api/routes/index');
 app.use(fileUpload({useTempFiles: true}));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
        next();
  });
 app.use('/api',routes);

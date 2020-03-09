@@ -35,6 +35,13 @@ class PublicationBusiness {
         return publication;
     }
 
+    async findAllNoPagination(){
+        let findPublication = await Publication.find({})
+        .sort({creation_date: 'desc'})
+        .exec();
+        return {findPublication};
+    }
+
     async findAll(page){
         page--;
         let limit = 5;

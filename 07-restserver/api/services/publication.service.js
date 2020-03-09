@@ -26,6 +26,10 @@ class CategoryService {
         return await this._publicationBusiness.findAll(numberPage);
     }
 
+    async findAllNoPagination(){
+        return await this._publicationBusiness.findAllNoPagination();
+    }
+
     async delete(id){
         return await this._publicationBusiness.delete(id);
     }

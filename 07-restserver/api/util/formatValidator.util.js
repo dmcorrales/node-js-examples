@@ -5,7 +5,7 @@ class FormatValidatorUtil {
     constructor(){
         // This format extension may change in the future, at the moment 
         // this is the temporal list.
-        this._validExtension = ['png','jpg', 'gif', 'jpeg'];
+        this._validExtension = ['png','jpg', 'gif', 'jpeg','webp'];
     }
 
     validate(file){

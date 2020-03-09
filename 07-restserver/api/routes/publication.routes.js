@@ -17,6 +17,10 @@ router.get("/page/:page", (req,res) => {
     controller.findAll(req,res);
 });
 
+router.get("/", (req,res) => {
+    controller.findAllNoPagination(req,res);
+});
+
 router.get("/:id", (req,res) => {
     controller.findOne(req,res);
 });
